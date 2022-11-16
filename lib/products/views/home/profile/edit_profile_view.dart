@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
+import 'package:stack_overflow_clone/features/components/scaffold/custom_scaffold.dart';
 import '../../../../core/base/base_singleton.dart';
 import '../../../../core/extensions/ui_extensions.dart';
 import '../../../../features/components/textformfield/default_text_form_field.dart';
@@ -43,17 +44,11 @@ class EditProfileView extends StatelessWidget with BaseSingleton {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: _appBar(context),
-      body: _body,
-    );
-  }
-
-  AppBar _appBar(BuildContext context) {
-    return AppBar(
+    return CustomScaffold(
       title: FadeInDown(
         child: Text(AppLocalizations.of(context)!.editProfile),
       ),
+      body: _body,
     );
   }
 

@@ -17,7 +17,7 @@ extension ContextExtension on BuildContext {
 extension MediaQueryExtension on BuildContext {
   double get height => mediaQuery.size.height;
   double get width => mediaQuery.size.width;
-  double get maxFinite=> double.maxFinite;
+  double get maxFinite => double.maxFinite;
   // Dynamic values
   double get val1x => height * 0.01;
   double get val2x => height * 0.02;
@@ -236,7 +236,6 @@ extension FontExtension on BuildContext {
 }
 
 extension AlignmentExtension on BuildContext {
-
   // Alignment
   Alignment get alignmentBottomCenter => Alignment.bottomCenter;
   Alignment get alignmentBottomLeft => Alignment.bottomLeft;
@@ -303,6 +302,11 @@ class SpaceSizedWidthBox extends StatelessWidget {
         super(key: key);
   @override
   Widget build(BuildContext context) => SizedBox(width: context.width * width);
+}
+
+extension EmptyPadding on num {
+  SizedBox get ph => SizedBox(height: toDouble());
+  SizedBox get pw => SizedBox(width: toDouble());
 }
 
 extension SizedBoxExtension on BuildContext {
